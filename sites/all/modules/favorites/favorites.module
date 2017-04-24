@@ -1,0 +1,40 @@
+<?php
+  function favorites_menu() {
+    $favorites = [
+      'Favorite Movies' => [
+        'The Thomas Crown Affair',
+        'Beauty and the Beast',
+        'Pride and Prejudice',
+      ],
+      'Favorite Books'=> [
+        'Pride and Prejudice',
+        'To Kill a Mockingbird',
+        'Great Expectations',
+      ],
+      'Favorite Songs' => [
+        "Bach's Cello Concertos",
+        'Gymnopedie #3',
+        'Bittersweet Symphony',
+      ],
+    ];
+    foreach ($favorites as $key => $value) {
+      $items['favorites/' . $key] = array(
+          'title' => $key,
+          'page callback' => 'favorites',
+          'page arguments' => array($value),
+          'access callback' => TRUE,
+          'type' => MENU_NORMAL_ITEM,
+      );
+    }
+    return $items;
+
+  }
+
+  function favorites($array) {
+    $results_list = '';
+    foreach($array as $key => $value) {
+      $results_list .= '<p>' . $value . '</p>';
+    }
+
+    return $results_list;
+  }

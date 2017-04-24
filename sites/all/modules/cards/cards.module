@@ -4,7 +4,6 @@
       'Erica',
       'Michaela',
       'Cameron',
-      'Bobert',
     ];
     foreach ($friends as $key) {
       $items['cards/' . $key] = array(
