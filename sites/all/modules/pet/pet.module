@@ -1,0 +1,14 @@
+<?php
+  function pet_menu() {
+    $items['pet'] = array(
+      'title' => 'Pets',
+      'page callback' => 'pet_display',
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+  }
+
+  function pet_display() {
+    return '<p>Here are some pets: mini pig, hedgehog, badger, platypus.</p><p>Here is a picture of the best pet:</p><img src="/sites/all/modules/pet/images/minipig.jpg">';
+  }
